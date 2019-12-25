@@ -1,0 +1,7 @@
+    SELECT users.name, users.surname, deals.price, deals.status FROM users JOIN deals ON users.id=deals.user_id;
+    
+    SELECT u.name, u.surname, d.price, d.status FROM users u JOIN deals d ON u.id=d.user_id; //тоже самое токо с алиасами 
+    
+     SELECT users.name, users.surname, deals.price, deals.status FROM users JOIN deals ON users.id=deals.user_id AND max(price) FROM deals.user_id; // НЕ работает
+     
+     SELECT users.name, users.surname, max(price), deals.status FROM users JOIN deals ON users.id=deals.user_id WHERE status=0; // работает
